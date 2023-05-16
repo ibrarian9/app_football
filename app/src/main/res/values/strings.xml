@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Football App</string>
+    <string name="title">App Football News</string>
+    <string name="lineup">Line Up</string>
+    <string name="news">News</string>
+    <string name="results">Results</string>
+    <string name="standings">Standings</string>
+    <string name="team">Teams</string>
+    <string name="exit">Exit</string>
+    <string name="epl_back">EPL Background</string>
+    <string name="Club_Name" />
+    <string name="Club_name">Club_name</string>
+    <string name="detail">detail</string>
+    <string name="Detail">Detail</string>
+    <string name="bruno">Bruno Fernandes</string>
+    <string name="bruno_news">Goal Bruno Fernandes make Man Utd Win</string>
+    <string name="bruno_news1">Bruno Fernandes shot deflected over Emiliano Martinez late in the first half after the goalkeeper had pushed away Marcus Rashford attempt. Erik ten Hag team then had to overcome a late scare when Victor Lindelof cleared off the line from Douglas Luiz.</string>
+    <string name="bruno_news2">But the win extends United advantage over Unai Emery in-form Villa to nine points and though one or both of Liverpool and Tottenham could close the gap later in the day, they are now well placed to secure Champions League qualification for next season.</string>
+</resources>
