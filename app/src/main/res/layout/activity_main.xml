@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,42 +8,74 @@
     android:background="@drawable/peakbg"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/titleHome"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
-        android:text="@string/title"
-        android:textColor="#000"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        >
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="right"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="251dp"
+            android:text="@string/title"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/titleHome"
-        android:layout_margin="20dp"
+        android:layout_width="391dp"
+        android:layout_height="548dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:columnCount="2"
-        android:rowCount="3" >
+        android:rowCount="3">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardTeams"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="13dp"
+            android:layout_height="60dp"
             android:layout_row="0"
-            android:layout_column="0"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,37 +83,38 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
-               <ImageView
-                   android:layout_width="40dp"
-                   android:layout_height="45dp"
-                   android:src="@drawable/epl"
-                   android:contentDescription="@string/title" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/title"
+                    android:src="@drawable/epl" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/team"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardResults"
-            android:layout_width="wrap_content"
+            android:layout_width="92dp"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,20 +122,20 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/football_trophy"
                     android:contentDescription="@string/title"
-                    />
+                    android:src="@drawable/football_trophy" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/results"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -111,15 +145,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="0"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,20 +161,20 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/football_result"
                     android:contentDescription="@string/title"
-                    />
+                    android:src="@drawable/football_result" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/standings"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -150,15 +184,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,20 +200,20 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/football_game"
                     android:contentDescription="@string/title"
-                    />
+                    android:src="@drawable/football_game" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/news"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -187,17 +221,17 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFormation"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_row="2"
-            android:layout_column="0"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -205,20 +239,20 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/football_field"
                     android:contentDescription="@string/title"
-                    />
+                    android:src="@drawable/football_field" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/lineup"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -228,15 +262,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardUseCompatPadding="true"
-            >
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -244,20 +278,20 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/football_exit"
                     android:contentDescription="@string/title"
-                    />
+                    android:src="@drawable/football_exit" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/exit"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

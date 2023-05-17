@@ -3,16 +3,34 @@ package com.app.uts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    private  int images[];
+    private  String text[];
+    private SliderAdapterExample adapter;
+    private SliderView sliderView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sliderView=findViewById(R.id.imageSlider);
+        images = new int[]{R.drawable.bruno_fernandes, R.drawable.epl_back, R.drawable.back_3, R.drawable.back_4, R.drawable.back_5};
+        text = new String[]{"Fernandes","Epl","Carabao Cup","Garnacho","Rashford" };
+        adapter = new SliderAdapterExample(images,text);
+        sliderView.setSliderAdapter(adapter);
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
+        sliderView.startAutoCycle();
 
     CardView Teams = findViewById(R.id.cardTeams);
     Teams.setOnClickListener(new View.OnClickListener() {
